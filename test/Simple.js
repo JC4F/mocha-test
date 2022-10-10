@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { expect } from 'chai';
 import { add, substract } from '../src/main';
 
 describe('Test logic math', function () {
