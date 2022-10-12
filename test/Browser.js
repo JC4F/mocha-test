@@ -1,9 +1,6 @@
-describe('test', () => {
-    it('passes', () => {
-        chai.expect(1).to.eql(1);
-    });
-    
-    it('fails', () => {
-        chai.expect(1).to.eql(2);
-    });
-});
+const testString = (str1, str2)=>{
+    return str1===str2;
+}
+const testNumber = (num1, num2)=>{
+    return num1===num2;
+}

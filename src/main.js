@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const add = (a, b)=>a+b;
 const substract = (a, b)=>a-b;
+
 const getAssitanceList = async(url)=>{
     let res = await axios.get(`${url}?type=getAll`);
     return res.data;

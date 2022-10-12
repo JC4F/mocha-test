@@ -11,12 +11,23 @@
 
     <script src="https://unpkg.com/chai/chai.js"></script>
     <script src="https://unpkg.com/mocha/mocha.js"></script>
-
+    
     <script class="mocha-init">
       mocha.setup('bdd');
       mocha.checkLeaks();
     </script>
     <script src="../test/Browser.js"></script>
+    <script>
+      describe('test function', function() {
+        it('test  function testString', function() {
+            chai.expect(testString("hello", "hello")).to.eql(true);
+        });
+        
+        it('test function testNumber', function() {
+            chai.expect(testNumber(1, 1)).to.eql(false);
+        });
+    });
+    </script>
     <script class="mocha-exec">
       mocha.run();
     </script>
