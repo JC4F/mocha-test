@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node ./node_modules/mocha/bin/_mocha --require @babel/register"
+    "test": "node ./node_modules/mocha/bin/_mocha --require @babel/register",
+    "start": "npx babel-node --presets @babel/preset-env src/main.js"
   },
   "author": "",
   "license": "ISC",

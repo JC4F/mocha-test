@@ -1,10 +1,34 @@
 import { expect } from "chai";
-import { getData } from "../src/main";
+import { getAssitanceList, postAssitanceVote } from "../src/main";
 
-describe("Test async with mocha", function () {
-  it("check length of response data", async function () {
-    let url = 'https://jsonplaceholder.typicode.com/users';
-    let data = await getData(url);
-    expect(data.length).to.equal(11);
+describe("Test api of help page", function () {
+  let url, postVoteData, postAddData;
+
+  before(()=>{
+    url = 'http://localhost:8088/Rentabike/help-page';
+    postVoteData = {
+      type: '0',
+      id: '1'
+    };
+    postAddData = {
+      action: 'add',
+      question: 'New Question',
+      answer: 'New Answer'
+    }
+  });
+
+  it("check response status code when getting data from help page", async function () {
+    let dataRes = await getAssitanceList(url);
+    expect(dataRes.SC).to.equal(1);
+  });
+
+  it("check response message when post vote data in help page", async function () {
+    let dataRes = await postAssitanceVote(url, postVoteData);
+    expect(dataRes.Mess).to.equal('Update quant Succesfully!');
+  });
+
+  it("check response status code when add new assistance data in help page", async function () {
+    let dataRes = await postAssitanceVote(url, postAddData);
+    expect(dataRes.SC).to.equal(1);
   });
 });
