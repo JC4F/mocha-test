@@ -29,6 +29,6 @@ describe("Test api of help page", function () {
 
   it("check response status code when add new assistance data in help page", async function () {
     let dataRes = await postAssitanceVote(url, postAddData);
-    expect(dataRes.SC).to.equal(1);
+    expect(dataRes.SC).to.equal(1); 
   });
 });
